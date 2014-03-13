@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "devise-naught_authentication"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Curtis9"]
@@ -27,8 +27,10 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "devise-naught_authentication.gemspec",
     "lib/devise-naught_authentication.rb",
     "lib/devise/naught_authentication.rb",
+    "lib/devise/naught_authentication/model.rb",
     "lib/devise/naught_authentication/strategy.rb",
     "spec/devise-naught_authentication_spec.rb",
     "spec/spec_helper.rb"
