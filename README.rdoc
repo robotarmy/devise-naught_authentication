@@ -1,6 +1,9 @@
 = devise-naught_authentication
 
-Description goes here.
+This is not an authentication scheme - it is a Null Authentication scheme that plugs into devise, generates appropriate controllers and
+always fails.
+
+It is usefull to compose it with a pre-cursor authentication scheme like simple_token_authentication and utilizing the rich world of devise.
 
 == Contributing to devise-naught_authentication
  
@@ -13,6 +16,9 @@ Description goes here.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 == Copyright
+
+This was based on work and research done by Jordan Bryon
+http://blog.jordanbyron.com/post/54013166913/devise-authentication-strategy-without
 
 Copyright (c) 2014 Curtis9. See LICENSE.txt for
 further details.
