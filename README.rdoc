@@ -23,11 +23,12 @@ I'm now able to turn on a special session controller that our client which is do
 a api-server credential that can be re-used.
 
 
-  devise_for :users, path_names: {sign_in: ''}, controllers: {sessions: "accounts"}, only: :sessions, path: 'account'
+  devise_for :users, :skip => [:sessions]
 
-Our sessions controller will farm out user exchange to another system and is used to negoitate a session token.
+Our Accounts controller will farm out user exchange to another system and is used to negoitate a session token - it can use
+devise to 'sign_in @user' without devise messing about in the routes
 
-  class AccountsController < Devise::SessionsController
+  class AccountsController < AccountController
     def create
     end
   end
