@@ -1,9 +1,44 @@
 = devise-naught_authentication
 
+Naught: 
+
+n. Nonexistence; nothingness.
+n. The figure 0; a cipher; a zero.
+
+Backstory: 
+
+The 'devise' strategy : 'Database Authenticatable' injects routing information that is used by the devise_for
+helper in the Rails Routing file. Without this information there is no possible way to build a custom session
+controller and use the rich world of devise plugins to build with.
+
+Rails provides a number of http authentication helpers , digest, basic and token and Devise provides sign_in and
+internal helpers for authentication / sign_in etc that can be combined with a custom session controller.
+
+Without a Shim to turn on the session controller - devise_for doesn't function.
+
+This is such a shim. It it is to create devise model that is not authenticatable and yet is.
+
+I'm now able to turn on a special session controller that our client which is doing OAUTH 2.0 negotiation with a
+3rd party service will use to exchange with our api-server (which will verify their 3rd party credential) to get
+a api-server credential that can be re-used.
+
+
+  devise_for :users, path_names: {sign_in: ''}, controllers: {sessions: "accounts"}, only: :sessions, path: 'account'
+
+Our sessions controller will farm out user exchange to another system and is used to negoitate a session token.
+
+  class AccountsController < Devise::SessionsController
+    def create
+    end
+  end
+
+What is it?
+
 This is not an authentication scheme - it is a Null Authentication scheme that plugs into devise, generates appropriate controllers and
 always fails.
 
-It is usefull to compose it with a pre-cursor authentication scheme like simple_token_authentication and utilizing the rich world of devise.
+It is usefull to compose it with a pre-cursor authentication scheme like simple_token_authentication , or the rails http
+authentication helpers while still utilizing the rich world of devise.
 
 == Contributing to devise-naught_authentication
  
