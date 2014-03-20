@@ -9,12 +9,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Curtis9"]
-  s.date = "2014-03-13"
+  s.date = "2014-03-20"
   s.description = "A Routable, but not authenticatable devise module - useful for creating api authentication schemes not based on database user"
   s.email = "curtis@lindenlab.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md",
     "README.rdoc"
   ]
   s.files = [
@@ -23,7 +22,6 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.md",
     "README.rdoc",
     "Rakefile",
     "VERSION",
