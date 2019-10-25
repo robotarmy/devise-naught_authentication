@@ -53,7 +53,7 @@ authentication helpers while still utilizing the rich world of devise.
 
 == Copyright
 
-This was based on work and research done by Jordan Bryon
+This was based on work and research done by Jordan Byron
 http://blog.jordanbyron.com/post/54013166913/devise-authentication-strategy-without
 
 Copyright (c) 2014 Curtis9. See LICENSE.txt for
